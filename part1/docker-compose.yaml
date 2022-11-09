@@ -1,0 +1,12 @@
+services:
+    client:
+        image: nginx
+        ports:
+            - 8000:80
+        volumes:
+            - ./src:/usr/share/nginx/html
+
+# Ther first port is the host port, which is what you connect to outside of the docker container. 
+# The second port is the port that you're service is listening on
+# basically any request to localhost:8000 will be forwarded to port 80 in the container where nginx is serving the html from 
+# its default static content file, specified in volumes
