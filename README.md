@@ -12,3 +12,16 @@ before the docker commands in the script.
 
 If all else fails, you should just be able to run `docker-compose up -d` to run the application container in detached mode, and then 
 all you need to do is navigate to localhost:8000 in your favorite browser to see the static content being served. 
+
+
+general dockerflow 
+
+1. create a Dockerfile with custom image instructions
+2. add a .dockerignore file
+3. build the image
+4. create a docker-compose.yml 
+5. spin up the container(s)
+
+
+
+sudo docker compose run web django-admin startproject crud .
