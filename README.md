@@ -14,14 +14,24 @@ If all else fails, you should just be able to run `docker-compose up -d` to run 
 all you need to do is navigate to localhost:8000 in your favorite browser to see the static content being served. 
 
 
-general dockerflow 
-
-1. create a Dockerfile with custom image instructions
-2. add a .dockerignore file
-3. build the image
-4. create a docker-compose.yml 
-5. spin up the container(s)
 
 
+Backend steps
+ 
+1. cd into `part3`
+ 
+2. run `docker compose build`
 
-sudo docker compose run web django-admin startproject crud .
+3. run `sudo docker compose run web python manage.py migrate` 
+
+4. run `sudo docker compose run web python manage.py seed`
+
+5. run `docker compose up`
+
+Frontend steps
+
+1. cd into `part2/simple_page`
+
+2. run `docker compose build`
+
+3. run `docker compose up`
