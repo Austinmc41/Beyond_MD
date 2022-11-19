@@ -20,11 +20,11 @@ from todo import views
 
 router = routers.DefaultRouter()
 router.register(r'todos', views.TodoView, 'todo')
-router.register(r'quotes', views.QuoteView, 'quotes')
+router.register(r'quotes', views.QuotesView, 'quotes')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    # path('quotes/', views.quote, name='quotes'),
+    path('api/quote/', views.QuoteView.as_view(), name='quote'),
 ]

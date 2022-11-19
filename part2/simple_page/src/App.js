@@ -32,13 +32,9 @@ function App() {
 
 	const getRandomQuote = async () => {
 		try {
-			const response = await http.get('/quotes/')
-			const { data } = response
-			const randomIndex = Math.floor(Math.random() * data.length);
-			// get random item
-			const randomQuote = data[randomIndex];
-			console.log(randomQuote)
-			setQuote(randomQuote)
+			const response = await http.get('/quote/')
+			const { data} = response
+			setQuote(data)
 		} catch (err) {
 			console.log(err)
 		}
